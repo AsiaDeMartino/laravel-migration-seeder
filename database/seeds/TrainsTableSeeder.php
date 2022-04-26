@@ -14,13 +14,14 @@ class TrainsTableSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        for ($i=0; $i < 20; $i++) { 
+        for ($i=0; $i < 10000; $i++) { 
 
             $train = new Train();
 
             $train->azienda = $faker->company();
             $train->stazione_di_partenza = $faker->city();
             $train->stazione_di_arrivo = $faker->city();
+            $train->giorno_di_partenza = $faker->date();
             $train->orario_di_partenza = $faker->time();
             $train->orario_di_arrivo = $faker->time();
             $train->codice_treno = $faker->bothify('??-#######');
